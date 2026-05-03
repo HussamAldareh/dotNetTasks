@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Tasks_MVC_1.Models.TaskItem>
+
+<h2>My Tasks</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Start</th>
+            <th>Due</th>
+            <th>Importance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.StartDate</td>
+                <td>@item.DueDate</td>
+                <td>@item.ImportanceLevel</td>
+            </tr>
+        }
+    </tbody>
+</table>

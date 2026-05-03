@@ -1,0 +1,20 @@
+﻿@model Tasks_MVC_1.Models.Users
+
+<h2>Edit User</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+    </div>
+
+    <button type="submit">Update</button>
+</form>

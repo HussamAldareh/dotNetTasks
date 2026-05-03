@@ -1,0 +1,46 @@
+﻿@model List<Tasks_MVC_1.Models.Users>
+
+<div class="container mt-4">
+
+    <h2 class="mb-3">Users List</h2>
+
+    <!-- Search -->
+    <form method="get" class="mb-3 d-flex gap-2">
+        <input type="text" name="search" class="form-control" placeholder="Search by name..." />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <!-- Create -->
+    <a asp-action="Create" class="btn btn-success mb-3">
+        + Create New User
+    </a>
+
+    <!-- Table -->
+    <table class="table table-bordered table-striped table-hover">
+
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th style="width: 200px;">Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@user.Id" class="btn btn-info btn-sm">Details</a>
+                        <a asp-action="Edit" asp-route-id="@user.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@user.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>

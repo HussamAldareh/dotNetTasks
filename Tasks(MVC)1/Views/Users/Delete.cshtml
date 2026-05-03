@@ -1,0 +1,12 @@
+﻿@model Tasks_MVC_1.Models.Users
+
+<h2>Delete User</h2>
+
+<p>Are you sure you want to delete @Model.Name ?</p>
+
+<form asp-action="Delete">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit">Yes Delete</button>
+</form>
+
+<a asp-action="Index">Cancel</a>
